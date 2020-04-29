@@ -1,0 +1,7 @@
+{
+  "categories": [
+    { "name": "Tel mobile", "type": "smartphone" },
+    { "name": "pc portbale & fixe", "type": "laptop" },
+    { "name": "Tablet Graphique", "type": "tablet" }
+  ]
+}
