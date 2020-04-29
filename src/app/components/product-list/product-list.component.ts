@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import * as data from '../../data/data.json';
 import * as categories from '../../data/categories.json';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -15,7 +16,7 @@ export class ProductListComponent implements OnInit {
   public cart=  [];
   public total: number;
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
     this.productList = data.data;
@@ -63,4 +64,13 @@ export class ProductListComponent implements OnInit {
     cartProduct.quantity += 1;
     this.refreshTotal();
   }
+
+  isLoged(){
+    if(localStorage.getItem('isLogged')){
+      this.router.navigate(["/order"])
+    }else{
+      this.router.navigate(["/auth"])
+    }
+  }
+
 }

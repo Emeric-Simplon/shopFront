@@ -1,38 +1,33 @@
 <div class="container">
-    <button type="button" class="btn btn-outline-primary mr-2" (click)="reset()">Réinitialiser</button>
     <div class="row">
+    <button type="button" class="btn btn-outline-primary mr-2" (click)="reset()">Réinitialiser</button>
+    
         <div *ngFor="let category of categories">
             <button type="button" class="btn btn-outline-primary mr-2"
                 (click)="filterProduct(category.type)">{{category.name}}</button>
         </div>
     </div>
 </div>
-<div class="container mt-2">
-    <div *ngFor="let product of productList">
-        <div class="col-4">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.name}}</h5>
-                    <p class="card-text">{{product.description}} -> {{product.price}}€</p>
-                    
-                    <a class="btn btn-primary" (click)="addItem(product)">Add to cart</a>
-                </div>
+<div class="container">
+    <div class="row mt-2">
+        <div *ngFor="let product of productList">
+            <div class="col">
+                <h5 class="card-title">{{product.name}}</h5>
+                <p class="card-text">{{product.description}} -> {{product.price}}€</p>
+                <a class="btn btn-primary" (click)="addItem(product)">Add to cart</a>
             </div>
         </div>
     </div>
+
     <div class="container mt-2">
         <div *ngFor="let cartProduct of cart">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{cartProduct.name}}</h5>
-                    <p class="card-text">{{cartProduct.quantity}}</p>
-                    <p>{{cartProduct.price}}€</p>
-                    <a class="btn btn-primary mr-2" (click)="incrementQty(cartProduct)">+</a>
-                    <a class="btn btn-primary" (click)="decrementQty(cartProduct)">-</a>
-                </div>
-            </div>
+            <h5 class="card-title">{{cartProduct.name}}</h5>
+            <p class="card-text">{{cartProduct.quantity}}</p>
+            <p>{{cartProduct.price}}€</p>
+            <a class="btn btn-primary mr-2" (click)="incrementQty(cartProduct)">+</a>
+            <a class="btn btn-primary" (click)="decrementQty(cartProduct)">-</a>
         </div>
         <p>TOTAL: {{total}}€</p>
-        <a class="btn btn-primary mr-2">Commander!</a>
+        <a class="btn btn-primary mr-2" (click)=isLoged()>Commander!</a>
     </div>
 </div>
