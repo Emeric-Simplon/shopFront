@@ -23,7 +23,6 @@ export class OrderDetailsComponent implements OnInit {
    }
    this.order = this.data.cart;
    this.total = this.data.total;
-    console.log(this.order)
   }
 
 }

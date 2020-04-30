@@ -20,7 +20,7 @@ export class AuthComponent implements OnInit {
   login() {
     if(user.email === this.user.email && user.password === this.user.password){
       localStorage.setItem("isLogged", "true")
-      this.router.navigate(['/product-list']);
+      this.router.navigate(['/order-details']);
     }else{
       this.router.navigate(['/']);
     }

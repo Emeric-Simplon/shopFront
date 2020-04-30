@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { Product } from 'src/app/models/product';
 import * as data from '../../data/data.json';
 import * as categories from '../../data/categories.json';
 import { Router } from '@angular/router';
