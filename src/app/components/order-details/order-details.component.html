@@ -1,0 +1,7 @@
+<h1>Récapitulatif de votre commande</h1>
+<div *ngFor="let product of order">
+    <p>{{product.name}}</p>
+    <p>{{product.quantity}}</p>
+    <p>{{product.price}}€</p>
+</div>
+<h2>TOTAL: {{total}}</h2>
